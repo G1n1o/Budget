@@ -12,6 +12,7 @@ class DateService
     public function getCurrentDate()
     {
         $currentDate = new DateTime('now');
+        $_SESSION['date'] = $currentDate->format('Y-m-d');
         $currentDate->setDate((int) $currentDate->format('Y'), (int) $currentDate->format('m'), 1);
 
         $_SESSION['dateBegin'] = $currentDate->format('Y-m-d');

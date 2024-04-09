@@ -21,7 +21,7 @@
             <label for="amount">Kwota</label>
             <input value="<?php echo e($oldFormData['amount'] ?? ''); ?>" type="number" name="amount" class="input" id="price" step="0.01" placeholder="Podaj kwotę">
             <label for="date">Data</label>
-            <input value="<?php echo e($oldFormData['date'] ?? ''); ?>" type="date" name="date" class="input" id="date">
+            <input value="<?php echo e($oldFormData['date'] ?? $_SESSION['date'] ?? ''); ?>" type="date" name="date" class="input" id="date">
             <label for="category">Kategoria</label>
             <select id="category" name="category">
               <option value="" disabled selected>--Wybierz kategorię--</option>
