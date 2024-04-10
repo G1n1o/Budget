@@ -23,7 +23,7 @@ class UserService
         )->count();
 
         if ($emailCount > 0) {
-            throw new ValidationException(['email' => 'Podany email istenieje już w bazie']);
+            throw new ValidationException(['email' => ['Podany email istenieje już w bazie']]);
         }
     }
 
