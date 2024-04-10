@@ -58,8 +58,6 @@ class AuthController
         $this->dateService->getCurrentDate();
 
         redirectTo('/balance');
-
-        $this->balanceView();
     }
 
     public function previousMonth()
@@ -67,8 +65,6 @@ class AuthController
         $this->dateService->getPreviousMonth();
 
         redirectTo('/balance');
-
-        $this->balanceView();
     }
 
     public function currentYear()
@@ -77,8 +73,6 @@ class AuthController
         $this->dateService->getCurrentYear();
 
         redirectTo('/balance');
-
-        $this->balanceView();
     }
 
     public function customDate()
@@ -86,8 +80,6 @@ class AuthController
         $this->dateService->getCustomDate($_POST);
 
         redirectTo('/balance');
-
-        $this->balanceView();
     }
 
     public function balanceView()
