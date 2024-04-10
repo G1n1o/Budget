@@ -59,11 +59,11 @@
                     <div class='comment'> <?= $income['income_comment']; ?></div>
                     <div class='buttons'>
                       <button class='edit'><a href="/addIncome/<?= e($income['id']); ?>"> <i class='bi bi-pencil'></i></a></button>
-                      <form action="/addIncome/<?php echo e($income['id']); ?>" method="POST">
+                      <form id="deleteForm_<?php echo e($income['id']); ?>" action="/addIncome/<?php echo e($income['id']); ?>" method="POST">
                         <input type="hidden" name="_METHOD" value="DELETE" />
 
                         <?php include $this->resolve("partials/_csrf.php"); ?>
-                        <button type="submit" class='delete'><i class='bi bi-trash'></i></button>
+                        <button type="button" class="delete" onclick="confirmDelete(<?php echo e($income['id']); ?>)"><i class="bi bi-trash"></i></button>
                       </form>
                     </div>
                   </li>
@@ -87,11 +87,11 @@
                     <div class='buttons'>
                       <button class='edit'> <a href="/addExpense/<?= e($expense['id']); ?>"> <i class='bi bi-pencil'></i></a>
                       </button>
-                      <form action="/addExpense/<?php echo e($expense['id']); ?>" method="POST">
+                      <form id="deleteForm_<?php echo e($expense['id']); ?>" action="/addExpense/<?php echo e($expense['id']); ?>" method="POST">
                         <input type="hidden" name="_METHOD" value="DELETE" />
 
                         <?php include $this->resolve("partials/_csrf.php"); ?>
-                        <button type="submit" class='delete'><i class='bi bi-trash'></i></button>
+                        <button type="button" class="delete" onclick="confirmDelete(<?php echo e($expense['id']); ?>)"><i class="bi bi-trash"></i></button>
                       </form>
 
                     </div>
