@@ -9,7 +9,8 @@ use App\Controllers\{
     AuthController,
     HomeController,
     TransactionController,
-    ErrorController
+    ErrorController,
+    SettingsController
 };
 use App\Middleware\{AuthRequiredMiddleware, GuestOnlyMiddleware};
 
@@ -36,5 +37,14 @@ function registerRoutes(App $app)
     $app->post('/addIncome/{income}', [TransactionController::class, 'editIncome'])->add(AuthRequiredMiddleware::class);
     $app->delete('/addExpense/{expense}', [TransactionController::class, 'delete'])->add(AuthRequiredMiddleware::class);
     $app->delete('/addIncome/{income}', [TransactionController::class, 'delete'])->add(AuthRequiredMiddleware::class);
+    $app->get('/settings', [SettingsController::class, 'settingsView'])->add(AuthRequiredMiddleware::class);
+    $app->post('/addNewIncomeCategory', [SettingsController::class, 'newCategory'])->add(AuthRequiredMiddleware::class);
+    $app->post('/editIncomeCategory', [SettingsController::class, 'editCategory'])->add(AuthRequiredMiddleware::class);
+    $app->post('/deleteIncomeCategory', [SettingsController::class, 'deleteCategory'])->add(AuthRequiredMiddleware::class);
+    $app->post('/addNewExpenseCategory', [SettingsController::class, 'newCategory'])->add(AuthRequiredMiddleware::class);
+    $app->post('/editExpenseCategory', [SettingsController::class, 'editCategory'])->add(AuthRequiredMiddleware::class);
+    $app->post('/deleteExpenseCategory', [SettingsController::class, 'deleteCategory'])->add(AuthRequiredMiddleware::class);
+    $app->post('/changeUserData',[SettingsController::class, 'changeUserData'])->add(AuthRequiredMiddleware::class);
+    $app->post('/changeUserPassword',[SettingsController::class, 'changeUserPassword'])->add(AuthRequiredMiddleware::class);
     $app->setErrorHandler([ErrorController::class, 'notFound']);
 }

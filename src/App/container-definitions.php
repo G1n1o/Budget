@@ -8,7 +8,8 @@ use App\Services\{
   ValidatorService,
   UserService,
   TransactionService,
-  DateService
+  DateService,
+  SettingsService
 };
 
 return [
@@ -29,5 +30,12 @@ return [
     $db =  $container->get(Database::class);
 
     return new TransactionService($db);
-  }
+  },
+  
+  SettingsService::class => function (Container $container) {
+    $db =  $container->get(Database::class);
+
+    return new SettingsService($db);
+  },
+
 ];

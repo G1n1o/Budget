@@ -30,8 +30,7 @@
 
               <?php foreach ($_SESSION['expensesCategory'] as $expense) {
                 echo "<option value={$expense['id']}>{$expense['name']}</option>";
-              }
-              ?>
+              } ?>
 
             </select>
             <label for="comment">Komantarz</label>

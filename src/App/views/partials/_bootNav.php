@@ -10,17 +10,16 @@
           <a class="nav-link" href="/addIncome"><i class=" bi bi-cash-coin"></i>Dodaj przychód</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/addExpense">
-            <i class="bi bi-basket"></i>Dodaj wydatek</a>
+          <a class="nav-link" aria-current="page" href="/addExpense"><i class="bi bi-basket"></i>Dodaj wydatek</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/balance"><i class="bi bi-bar-chart"></i>Przeglądaj bilans</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/setting"><i class="bi bi-gear"></i>Ustawienia</a>
+          <a class="nav-link" href="/settings"><i class="bi bi-gear"></i>Ustawienia</a>
         </li>
 
-        <li id="opcjaSpecjalna" class="nav-item dropdown hide">
+        <li id="hiddenOption" class="nav-item dropdown hide">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Wybierz
             okres</a>
           <ul class="dropdown-menu">

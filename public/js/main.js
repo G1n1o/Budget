@@ -2,7 +2,7 @@ const currentUrl = window.location.href
 const navList = document.getElementById('navList').getElementsByTagName('a')
 
 if (currentUrl.includes('/balance')) {
-	document.getElementById('opcjaSpecjalna').classList.remove('hide')
+	document.getElementById('hiddenOption').classList.remove('hide')
 }
 
 for (let i = 0; i < navList.length; i++) {

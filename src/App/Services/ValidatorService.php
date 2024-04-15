@@ -13,7 +13,7 @@ use Framework\Rules\{
     MatchRule,
     LengthMaxRule,
     NumericRule,
-    DateFormatRule
+    DateFormatRule,
 };
 
 class ValidatorService
@@ -58,6 +58,22 @@ class ValidatorService
             'date' => ['required', 'dateFormat:Y-m-d'],
             'comment' => ['lengthMax:255'],
             'category' => ['selected']
+        ]);
+    }
+
+    public function validateUserData(array $formData)
+    {
+        $this->validator->validate($formData, [
+            'username' => ['required'],
+            'lastname' => ['required'],
+            'email' => ['required', 'email']
+        ]);
+    }
+    public function validateUserPassword(array $formData)
+    {
+        $this->validator->validate($formData, [
+            'newPassword' => ['required', 'min:6'],
+            'confirmNewPassword' => ['required', 'match:newPassword']
         ]);
     }
 }
