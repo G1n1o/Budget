@@ -94,7 +94,7 @@ class UserService
     public function getCategories()
     {
         $expensesCategory = $this->db->query(
-            "SELECT id, name FROM expense_category_assigned_to_users WHERE user_id = :user_id",
+            "SELECT id, name, limits FROM expense_category_assigned_to_users WHERE user_id = :user_id",
             [
                 'user_id' =>  $_SESSION['user']
             ]

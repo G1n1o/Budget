@@ -79,6 +79,29 @@
 	.wrapper {
 		width: 50%;
 	}
+	.classLimit {
+		display: flex;
+	}
+
+	.wrapper.limit {
+		position: absolute;
+		width: 31%;
+		height: 15vh;
+		top: 17%;
+	}
+	.wrapper.limit .text {
+		font-size: 1.6rem;
+	}
+
+	.wrapper.limit.info {
+		left: 3%;
+	}
+	.wrapper.limit.value {
+		right: 33%;
+	}
+	.wrapper.limit.left {
+		right: 1%;
+	}
 }
 @media (max-width: 776px) {
 	.nav-buttons svg {
@@ -145,6 +168,26 @@
 	.nav-user {
 		font-size: 1.4rem;
 	}
+	.classLimit {
+		display: flex;
+	}
+
+	.wrapper.limit {
+		position: absolute;
+		width: 31%;
+		height: 15vh;
+		top: 17%;
+	}
+
+	.wrapper.limit.info {
+		left: 3%;
+	}
+	.wrapper.limit.value {
+		right: 33%;
+	}
+	.wrapper.limit.left {
+		right: 1%;
+	}
 }
 @media (max-width: 576px) {
 	.nav-logo {
@@ -199,6 +242,27 @@
 	}
 	.balance p {
 		font-size: 0.8rem;
+	}
+
+	.classLimit {
+		display: flex;
+	}
+
+	.wrapper.limit {
+		position: absolute;
+		width: 31%;
+		height: 15vh;
+		top: 20%;
+	}
+
+	.wrapper.limit.info {
+		left: 0%;
+	}
+	.wrapper.limit.value {
+		right: 34%;
+	}
+	.wrapper.limit.left {
+		right: 2%;
 	}
 }
 *,
@@ -454,7 +518,7 @@ header .dropdown-menu {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 8vh;
+	height: 6vh;
 	color: #fff;
 	background-color: #03001c;
 	text-transform: uppercase;
@@ -484,9 +548,48 @@ header .dropdown-menu {
 	font-size: 1.5rem;
 }
 
+/* .wrapper.limit {
+	position: relative;
+	width: 18%;
+	height: 20vh;
+} */
+
+/* .wrapper.limit.info {
+	top: -30%;
+	left: -24%;
+}
+.wrapper.limit.value {
+	top: -30%;
+	right: -24%;
+}
+.wrapper.limit.left {
+	top: 10%;
+	right: -24%;
+} */
+
+.wrapper.limit .text {
+	height: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrapper.limit.left .text span {
+	color: red;
+}
+
 .transaction {
 	position: absolute;
-	transform: translateY(5%);
+	max-height: 65vh;
+	transform: translateY(23%);
+	overflow-y: auto;
+}
+
+.transaction::-webkit-scrollbar {
+	width: 1rem;
+}
+.transaction::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .balance {

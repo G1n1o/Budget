@@ -65,6 +65,15 @@ class SettingsController
         redirectTo($_SERVER['HTTP_REFERER']);
     }
 
+    public function editLimitForCategory()
+    {
+        $transactionType = $_SERVER['REQUEST_URI'] === '/editIncomeCategory' ? 'income' : 'expense';
+        $this->settingsService->editLimit($_POST, $transactionType);
+        $this->userService->getCategories();
+
+        redirectTo($_SERVER['HTTP_REFERER']);
+    }
+
     public function deleteCategory()
     {
 
@@ -73,5 +82,14 @@ class SettingsController
         $this->userService->getCategories();
 
         redirectTo($_SERVER['HTTP_REFERER']);
+    }
+
+    public function limitAction(array $param)
+    {
+        echo json_encode($this->settingsService->getLimit((int) $param['CategoryID']));
+    }
+    public function sumOfExpenses(array $param)
+    {
+        echo json_encode($this->settingsService->getSumOfExpenses((int) $param['CategoryID'], $param['date']));
     }
 }

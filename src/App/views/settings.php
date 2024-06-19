@@ -187,10 +187,36 @@
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="headingTwoThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoThree" aria-expanded="false" aria-controls="collapseTwoThree">
-                          Usuń wybraną katogrię
+                          Dodaj/edytuj limit dla kategorii
                         </button>
                       </h2>
                       <div id="collapseTwoThree" class="accordion-collapse collapse" aria-labelledby="headingTwoThree" data-bs-parent="#accordionExampleTwo">
+                        <div class="accordion-body">
+                          <form method="POST" action="/editLimitForCategory">
+                            <?php include $this->resolve("partials/_csrf.php"); ?>
+                            <select id="expenseLimitCategory" name="category" class="form-select" aria-label="Default select example">
+                              <option value="" disabled selected>--Wybierz kategorię--</option>
+                              <?php foreach ($_SESSION['expensesCategory'] as $expense) {
+                                echo "<option value={$expense['id']}>{$expense['name']}</option>";
+                              } ?>
+                            </select>
+                            <div class="form-floating mb-3">
+                              <input type="text" name="newLimit" class="form-control" id="floatingLimitInput">
+                              <label for="floatingLimitInput">Wartość limitu</label>
+                            </div>
+                            <button class="btn blue-btn" type="submit">Zapisz</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingTwoFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoFour" aria-expanded="false" aria-controls="collapseTwoFour">
+                          Usuń wybraną katogrię
+                        </button>
+                      </h2>
+                      <div id="collapseTwoFour" class="accordion-collapse collapse" aria-labelledby="headingTwoFour" data-bs-parent="#accordionExampleTwo">
                         <div class="accordion-body">
                           <form method="POST" action="/deleteExpenseCategory">
                             <?php include $this->resolve("partials/_csrf.php"); ?>
@@ -302,5 +328,5 @@
   </main>
 
 
-
+  <script src="/js/limit.js"></script>
   <?php include $this->resolve("partials/_footer.php"); ?>

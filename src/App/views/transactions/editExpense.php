@@ -51,10 +51,25 @@
 
           </form>
 
+
+        </div>
+        <div class="classLimit">
+          <div class="wrapper limit info">
+            <div class="top">LIMIT</div>
+            <div class="text" id="limitInfo">Wybierz kategorię</div>
+          </div>
+          <div class="wrapper limit value">
+            <div class="top">SUMA WYDATKÓW</div>
+            <div class="text" id="limitValue">Wybierz kategorię i datę</div>
+          </div>
+          <div class="wrapper limit left">
+            <div class="top">LIMIT INFO</div>
+            <div class="text" id="limitLeft">Informacja o pozostałym limicie</div>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
-
+  <script src="/js/expenseLimit.js"></script>
   <?php include $this->resolve("partials/_footer.php"); ?>

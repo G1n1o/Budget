@@ -43,6 +43,6 @@ function confirmDelete(incomeId) {
 
 function confirmDelete(expenseId) {
 	if (confirm('Czy na pewno chcesz usunąć ten wydatek?')) {
-		document.getElementById('deleteForm_' + expenseId).submit();
+		document.getElementById('deleteForm_' + expenseId).submit()
 	}
 }

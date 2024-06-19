@@ -43,8 +43,11 @@ function registerRoutes(App $app)
     $app->post('/deleteIncomeCategory', [SettingsController::class, 'deleteCategory'])->add(AuthRequiredMiddleware::class);
     $app->post('/addNewExpenseCategory', [SettingsController::class, 'newCategory'])->add(AuthRequiredMiddleware::class);
     $app->post('/editExpenseCategory', [SettingsController::class, 'editCategory'])->add(AuthRequiredMiddleware::class);
+    $app->post('/editLimitForCategory', [SettingsController::class, 'editLimitForCategory'])->add(AuthRequiredMiddleware::class);
     $app->post('/deleteExpenseCategory', [SettingsController::class, 'deleteCategory'])->add(AuthRequiredMiddleware::class);
-    $app->post('/changeUserData',[SettingsController::class, 'changeUserData'])->add(AuthRequiredMiddleware::class);
-    $app->post('/changeUserPassword',[SettingsController::class, 'changeUserPassword'])->add(AuthRequiredMiddleware::class);
+    $app->post('/changeUserData', [SettingsController::class, 'changeUserData'])->add(AuthRequiredMiddleware::class);
+    $app->post('/changeUserPassword', [SettingsController::class, 'changeUserPassword'])->add(AuthRequiredMiddleware::class);
+    $app->get('/api/limit/{CategoryID}', [SettingsController::class, 'limitAction'])->add(AuthRequiredMiddleware::class);
+    $app->get('/api/sumOfExpenses/{CategoryID}/{date}', [SettingsController::class, 'sumOfExpenses'])->add(AuthRequiredMiddleware::class);
     $app->setErrorHandler([ErrorController::class, 'notFound']);
 }
