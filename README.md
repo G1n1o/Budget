@@ -19,7 +19,7 @@ The project is built using HTML, CSS (including Bootstrap), JavaScript with AJAX
 After launching the application, the user is greeted with a clean and simple welcome screen that leads to the login or registration panel.
 This is the starting point for accessing the home budget management system.
 
- <img src="images/homeBudget.png"/>
+ <img src="images/start.png"/>
 
  <br>
 
