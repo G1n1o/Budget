@@ -46,19 +46,19 @@ Categories make it easier to analyze the structure of the budget and track finan
  The balance screen provides a clear overview of the user’s financial situation for a selected time period.
 The application allows choosing between:
 
-current month
+- current month
 
-current year
+- current year
 
-custom date range (from–to)
+- custom date range (from–to)
 
 This flexibility helps users analyze their finances precisely, whether they want to check a short-term snapshot or review long-term trends.
 
 The view is divided into two main sections:
 
-Incomes — all recorded earnings with amount, category, date, and optional notes
+- Incomes — all recorded earnings with amount, category, date, and optional notes
 
-Expenses — categorized spending entries with full edit/delete options
+- Expenses — categorized spending entries with full edit/delete options
 
 Each record can be edited or removed directly from the table through intuitive action icons.
 
